@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<!-- Blog starts -->
+				<div class="blog">
+					<div class="row">
+						<div class="span12">
+							<!-- Blog Posts -->
+							<div class="row">
+
+								{% block listall %}
+								<!--begin sidebar-->
+								<div class="span4">
+									<div class="sidebar">
+										<!-- Widget -->
+										<div class="widget">
+											<h4>البحث</h4>
+											<form method="get" id="searchform" action="/search" class="form-search">
+												<input type="text" value="" name="s" id="s" class="input-medium">
+												<button type="submit" class="btn">ابدأ</button>
+												<div class="options" style='margin:4%;'>
+													<input type="radio" name="cat" value="rassd"/>&nbsp; الرصد الاعلامي &nbsp;
+													<input type="radio" name="cat" value="news" />&nbsp; الاخبار &nbsp;
+												</div>  
+											</form>
+										</div>
+										<div class="widget">
+											<h4>آخر الاخبار</h4>
+											{% if not last_info %}
+											<ul>
+												<li>Etiam adipiscing posuere justo, nec iaculis justo dictum non</li>
+												<li>Cras tincidunt mi non arcu hendrerit eleifend</li>
+												<li>Aenean ullamcorper justo tincidunt justo aliquet et lobortis diam faucibus</li>
+												<li>Maecenas hendrerit neque id ante dictum mattis</li>
+												<li>Vivamus non neque lacus, et cursus tortor</li>
+											</ul>
+											{% else %}
+												{% for i in last_info %}
+													<ul>
+														<li><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></li>
+													</ul>
+												{% endfor %}
+											{% endif %}
+										</div>
+										<div class="widget">
+											<h4>حول الموقع</h4>
+											<p>
+												Nulla facilisi. Sed justo dui, id erat. Morbi auctor adipiscing tempor. Phasellus condimentum rutrum aliquet. Quisque eu consectetur erat. Proin rutrum, erat eget posuere semper, <em>arcu mauris posuere tortor</em>,velit at <a href="#">magna sollicitudin cursus</a> ac ultrices magna. Aliquam consequat, purus vitae auctor ullamcorper, sem velit convallis quam, a pharetra justo nunc et mauris.
+											</p>
+										</div>
+									</div>
+								</div>
+								<!--end sidebar-->
+								{% endblock %}
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

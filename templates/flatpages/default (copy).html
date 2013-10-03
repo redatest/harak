@@ -1,0 +1,34 @@
+{% extends 'news_base.html' %}
+
+{% block listall %}
+{{ block.super }}
+<div class="span8">
+	<div class="posts">
+		<!-- Each posts should be enclosed inside "entry" class" -->
+		 
+		<!-- Post Entry -->
+		 
+		<div class="entry">
+			<h2><a href="#">&nbsp;</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				&nbsp;
+			</div>
+						
+			<p>
+				 {{ flatpage.content }}
+			</p>
+			<div class="button">
+				<a href="#">Social goes here</a>
+			</div>
+		</div>
+		  
+		<!-- end post entry -->
+		
+		<div class="clearfix">
+		</div>
+	</div>
+</div>
+<!-- end Blog Posts -->
+{% endblock %}
+

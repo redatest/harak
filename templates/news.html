@@ -1,0 +1,87 @@
+{% extends 'news_base.html' %}
+
+{% block listall %}
+{{ block.super }}
+<div class="span8">
+	<div class="posts">
+		
+		 {% if news_entry %} 
+		<!-- Post Entry -->
+		 {% for e in news_entry %}
+		<div class="entry">
+			<h2><a href="{{ e.get_absolute_url }}">{{ e.title }}</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				<i class="icon-calendar"></i> {{ e.published }} <i class="icon-user"></i> Admin <i class="icon-folder-open"></i></span>
+			</div>
+			<!-- Thumbnail -->
+			<div class="bthumb2">
+<!-- 
+				<a href="#"><img src="{{ e.image.url }}" alt="image not loaded" style="width:200px; height:130px;"></a>
+-->
+				<a href="#"><img src="http://placehold.it/200x130" alt="image not loaded"></a>
+			</div>
+			<p>
+				 {{ e.html_body|safe|truncatewords_html:90 }}
+			</p>
+			<div class="button">
+				<a href="{{ e.get_absolute_url }}">اقرأ اكثر</a>
+			</div>
+			
+			
+		</div>
+		 {% endfor %} 
+		<!-- end post entry -->
+		 {% else %} 
+		<!-- Post Default -------------------------------------->
+		<div class="entry">
+			<h2><a href="#">Waiting for some posts</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				<i class="icon-calendar"></i> 26-2-2012 <i class="icon-user"></i> Admin <i class="icon-folder-open"></i><a href="#">General</a><span class="pull-right"><i class="icon-comment"></i><a href="#">2 Comments</a></span>
+			</div>
+			<!-- Thumbnail -->
+			<div class="bthumb2">
+				<a href="#"><img src="http://placehold.it/200x130.jpg" alt=""></a>
+			</div>
+			<p>
+				 Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor
+			</p>
+			<p>
+				 Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor
+			</p>
+		</div>
+		<!-- default post 2 -->
+		<div class="entry">
+			<h2><a href="#">Waiting for some posts</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				<i class="icon-calendar"></i> 26-2-2012 <i class="icon-user"></i> Admin <i class="icon-folder-open"></i><a href="#">General</a><span class="pull-right"><i class="icon-comment"></i><a href="#">2 Comments</a></span>
+			</div>
+			<!-- Thumbnail -->
+			<div class="bthumb2">
+				<a href="#"><img src="http://placehold.it/200x130.jpg" alt=""></a>
+			</div>
+			<p>
+				 Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor
+			</p>
+			<p>
+				 Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor
+			</p>
+		</div>
+		<!--end post default------------------------------------------>
+		 {% endif %} 
+		<!-- Pagination -->
+		<div class="paging">
+			<a href="#">Next</a>
+			<span class="current">3</span>
+			<span class="dots">…</span>
+			<a href="#">2</a>
+			<a href="#">1</a>
+		</div>
+		<div class="clearfix">
+		</div>
+	</div>
+</div>
+<!-- end Blog Posts -->
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'news_base.html' %}
+
+{% block listall %}
+{{ block.super }}
+<div class="span8">
+	<div class="posts">
+		<!-- Each posts should be enclosed inside "entry" class" -->
+		 
+		<!-- Post Entry -->
+		 
+		<div class="entry">
+			<h2><a href="{{ e.get_absolute_url }}">{{ entry.title }}</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				<i class="icon-calendar"></i> {{ entry.published }} <i class="icon-user"></i> Admin <i class="icon-folder-open"></i></span>
+			</div>
+			<!-- Thumbnail -->
+			<div class="bthumb2">
+				<a href="#"><img src="{{ entry.image.url }}" alt="image not loaded" style="width:370px; height:160px;"></a>
+			</div>
+			<p>
+				 {{ entry.html_body|safe }}
+			</p>
+			
+		</div>
+		  
+		<!-- end post entry -->
+		
+		<div class="clearfix">
+		</div>
+	</div>
+</div>
+<!-- end Blog Posts -->
+{% endblock %}
+

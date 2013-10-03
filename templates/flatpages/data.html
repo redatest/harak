@@ -1,0 +1,33 @@
+{% extends 'news_base.html' %}
+
+{% block listall %}
+{{ block.super }}
+<div class="span8">
+	<div class="posts">
+				 
+		<!-- Post Entry -->
+		 
+		<div class="entry">
+			<h2><a href="#">&nbsp;</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				البيان رقم 1&nbsp;
+			</div>
+				<img src="http://placehold.it/615x600" alt="image not loaded" title="" />
+			<p>
+				 {{ flatpage.content }}
+			</p>
+			<div class="button">
+				<a href="#">Social goes here</a>
+			</div>
+		</div>
+		  
+		<!-- end post entry -->
+		
+		<div class="clearfix">
+		</div>
+	</div>
+</div>
+<!-- end Blog Posts -->
+{% endblock %}
+

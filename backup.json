@@ -1,0 +1,94 @@
+('/home/enigma/django_projects/harak3/harak/templates',)
+('/home/enigma/django_projects/harak3/harak/templates',)
+[
+  {
+    "pk": 1,
+    "model": "flatpages.flatpage",
+    "fields": {
+      "registration_required": false,
+      "title": "about",
+      "url": "/about/",
+      "template_name": "default.html",
+      "sites": [
+        1
+      ],
+      "content": "lorem ipsum",
+      "enable_comments": false
+    }
+  },
+  {
+    "pk": 2,
+    "model": "flatpages.flatpage",
+    "fields": {
+      "registration_required": false,
+      "title": "committee",
+      "url": "/committee/",
+      "template_name": "default.html",
+      "sites": [
+        1
+      ],
+      "content": "lorem ipsmu",
+      "enable_comments": false
+    }
+  },
+  {
+    "pk": 3,
+    "model": "flatpages.flatpage",
+    "fields": {
+      "registration_required": false,
+      "title": "local_committee",
+      "url": "/local_committee/",
+      "template_name": "default.html",
+      "sites": [
+        1
+      ],
+      "content": "lorem",
+      "enable_comments": false
+    }
+  },
+  {
+    "pk": 4,
+    "model": "flatpages.flatpage",
+    "fields": {
+      "registration_required": false,
+      "title": "purpose",
+      "url": "/purpose/",
+      "template_name": "default.html",
+      "sites": [
+        1
+      ],
+      "content": "lorem",
+      "enable_comments": false
+    }
+  },
+  {
+    "pk": 5,
+    "model": "flatpages.flatpage",
+    "fields": {
+      "registration_required": false,
+      "title": "testimonial",
+      "url": "/testimonial/",
+      "template_name": "default.html",
+      "sites": [
+        1
+      ],
+      "content": "lorem",
+      "enable_comments": false
+    }
+  },
+  {
+    "pk": 6,
+    "model": "flatpages.flatpage",
+    "fields": {
+      "registration_required": false,
+      "title": "values",
+      "url": "/values/",
+      "template_name": "default.html",
+      "sites": [
+        1
+      ],
+      "content": "lorem",
+      "enable_comments": false
+    }
+  }
+]

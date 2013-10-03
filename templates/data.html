@@ -1,0 +1,52 @@
+{% extends 'news_base.html' %}
+
+{% block listall %}
+{{ block.super }}
+
+<div class="span8">
+	<div class="posts">
+				 
+		<!-- Post Entry -->
+		 {% if entries %}
+		 {% for i in entries %}
+			<div class="entry">
+			<h2><a href="#">&nbsp;</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				<a href="{{ i.get_absolute_url }}">{{ i.title }}</a> &nbsp;<i class="icon-calendar"></i>&nbsp; {{ i.published }} 
+			</div>
+				<img src="http://placehold.it/615x800" alt="image not loaded" title="statement" />
+			<p>
+				 {{ i.html_body|safe|truncatewords_html:30 }}
+			</p>
+			
+			<div class="button">
+				<a href="{{ i.get_absolute_url }}">صفحة مستقلة</a>
+			</div>
+			
+		</div>
+		{% endfor %}
+		 {% else %}
+		<div class="entry">
+			<h2><a href="#">&nbsp;</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				البيان رقم 1&nbsp;
+			</div>
+				<img src="http://placehold.it/615x800" alt="image not loaded" title="" />
+			<p>
+				 Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor
+			</p>
+			
+		</div>
+		{% endif %}
+		  
+		<!-- end post entry -->
+		
+		<div class="clearfix">
+		</div>
+	</div>
+</div>
+<!-- end Blog Posts -->
+{% endblock %}
+

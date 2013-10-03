@@ -1,0 +1,32 @@
+{% extends 'news_base.html' %}
+
+{% block listall %}
+{{ block.super }}
+
+<div class="span8">
+	<div class="posts">
+				 
+		<!-- Post Entry -->
+		 {% if entry %}
+		<div class="entry">
+			<h2><a href="#">&nbsp;</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				{{ entry.title }}&nbsp;
+			</div>
+				<img src="http://placehold.it/615x800" alt="image not loaded" title="" />
+			<p>
+				 {{ entry.html_body|safe }}
+			</p>
+			
+		</div>
+		  {% endif %}
+		<!-- end post entry -->
+		
+		<div class="clearfix">
+		</div>
+	</div>
+</div>
+<!-- end Blog Posts -->
+{% endblock %}
+

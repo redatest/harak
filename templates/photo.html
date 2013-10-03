@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<!-- Content strats -->
+
+<div class="content">
+   <div class="container">
+      <div class="row">
+         <div class="span12">
+            
+            <!-- Gallery starts -->
+            
+            <div class="gallery">
+               <div class="row">
+				   {% if not entries %}
+                  <div class="span12">
+                  
+                     <!-- Gallery hero -->
+                     <div class="hero">
+                        <!-- Title. Don't forget the <span> tag -->
+                        <h3><span>Gallery</span></h3>
+                        <!-- para -->
+                        <p>Praesent at tellus porttitor nisl porttitor sagittis. Mauris in massa ligula, a tempor nulla. Ut tempus interdum mauris vel vehicula. Nulla ullamcorper tortor commodo in sagittis est accumsan.</p>
+                     </div>
+                     <!-- Gallery -->
+                     
+                    <div id="gallery">
+                        <!-- For image lightbox you need to include "a" tag pointing to image link, along with the class "prettyphoto".-->
+                       <a href="/static/bob11.jpg" class="prettyphoto">
+                           <img src="/static/bob11.jpg" alt="">
+                       </a>
+                       <a href="/static/bob11.jpg" class="prettyphoto">
+                           <img src="/static/bob11.jpg" alt="">                         
+                       </a>
+                       <a href="/static/bob11.jpg" class="prettyphoto">
+                           <img src="/static/bob11.jpg" alt="">                        
+                       </a>
+                       <a href="/static/bob11.jpg" class="prettyphoto">
+                           <img src="/static/bob11.jpg" alt="">                          
+                       </a>
+                       
+                       
+                    </div>
+					<br/>
+                     
+                  </div> <!-- end span12 -->
+					{% else %}
+					{% for i in entries %}
+					<div class="span12">
+                  
+						 <!-- Gallery hero -->
+						 <div class="hero">
+							<!-- Title. Don't forget the <span> tag -->
+							<h3><span>{{ i.title }}</span></h3>
+							<!-- para -->
+							<p>{{ i.description }}</p>
+						 </div>
+						 <!-- Gallery -->
+						 
+						<div id="gallery">
+							
+							{% for p in i.img_set.all %}
+						   <a href="/static/bob11.jpg" class="prettyphoto">
+							   <img src="http://placehold.it/190x150" alt="img">
+<!--
+							   <img src="{{ p.image.url }}" alt="" title="" />
+-->
+						   </a>
+						   {% endfor %}
+						</div>
+						<br/>
+						 
+					  </div> <!-- end span12 -->
+					{% endfor %}
+					{% endif %}
+               </div>
+            </div>
+            
+            
+            <!-- gallery ends -->
+            
+            
+            
+            
+         </div>
+      </div>
+   </div>
+</div>   
+
+<!-- Content ends --> 
+
+{% endblock %}

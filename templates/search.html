@@ -1,0 +1,48 @@
+{% extends 'news_base.html' %}
+
+{% block listall %}
+{{ block.super }}
+<div class="span8">
+	<div class="posts">
+				 
+		<!-- Post Entry -->
+		{% if found_entries %}
+		<br/><br/>
+		<div class="alert alert-success">
+			لقد قمت بالبحث عن: <h4>"{{ query_string }}"</h4> والنتيجة هي:
+		</div>
+		
+		{% for entry in found_entries %} 
+		<div class="entry">
+			<h2><a href="#">{{ entry.title }}</a></h2>
+			<!-- Meta details -->
+			<div class="meta">
+				{{ entry.published }}<i class="icon-calendar color"></i>  <i class="icon-user color"></i> Admin </span>
+			</div>
+			
+			<p>
+				 {{ entry.html_body|safe|truncatewords_html:30 }}
+			</p>
+			
+			<div class="button">
+				<a href="{{ entry.get_absolute_url }}">اقرأ اكثر</a>
+			</div>
+			
+		</div>
+		{% endfor %}  
+			<!-- end post entry -->
+		{% else %}
+			<br/>
+			<br/>
+			<div class="alert alert-error">
+				عذرا لا يوجد اي دلالات للكلمة: <br/> <h4>{{ query_string }}</h4>
+			</div>
+		{% endif %}
+		
+		<div class="clearfix">
+		</div>
+	</div>
+</div>
+<!-- end Blog Posts -->
+{% endblock %}
+
